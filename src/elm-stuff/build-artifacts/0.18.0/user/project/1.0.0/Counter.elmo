@@ -1,0 +1,69 @@
+var _user$project$Counter$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		if (_p0.ctor === 'Increment') {
+			return _elm_lang$core$Native_Utils.update(
+				model,
+				{count: model.count + 1});
+		} else {
+			return _elm_lang$core$Native_Utils.update(
+				model,
+				{count: model.count - 1});
+		}
+	});
+var _user$project$Counter$Model = function (a) {
+	return {count: a};
+};
+var _user$project$Counter$model = _user$project$Counter$Model(0);
+var _user$project$Counter$Decrement = {ctor: 'Decrement'};
+var _user$project$Counter$Increment = {ctor: 'Increment'};
+var _user$project$Counter$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$p,
+				{ctor: '[]'},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text(
+						_elm_lang$core$Basics$toString(model.count)),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$button,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onClick(_user$project$Counter$Increment),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text('Increment'),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$button,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Events$onClick(_user$project$Counter$Decrement),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text('Decrement'),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
+var _user$project$Counter$main = _elm_lang$html$Html$beginnerProgram(
+	{model: _user$project$Counter$model, view: _user$project$Counter$view, update: _user$project$Counter$update})();
